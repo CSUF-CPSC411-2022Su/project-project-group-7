@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A58CCB82851221000FE87CF /* CommunityPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A58CCB72851221000FE87CF /* CommunityPost.swift */; };
 		7AA70A8E28511E270070922F /* Community_HubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA70A8D28511E270070922F /* Community_HubApp.swift */; };
 		7AA70A9028511E270070922F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA70A8F28511E270070922F /* ContentView.swift */; };
 		7AA70A9228511E280070922F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA70A9128511E280070922F /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A58CCB72851221000FE87CF /* CommunityPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityPost.swift; sourceTree = "<group>"; };
 		7AA70A8A28511E270070922F /* Community Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Community Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA70A8D28511E270070922F /* Community_HubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community_HubApp.swift; sourceTree = "<group>"; };
 		7AA70A8F28511E270070922F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				7AA70A8F28511E270070922F /* ContentView.swift */,
 				7AA70A9128511E280070922F /* Assets.xcassets */,
 				7AA70A9328511E280070922F /* Preview Content */,
+				7A58CCB72851221000FE87CF /* CommunityPost.swift */,
 			);
 			path = "Community Hub";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA70A9028511E270070922F /* ContentView.swift in Sources */,
+				7A58CCB82851221000FE87CF /* CommunityPost.swift in Sources */,
 				7AA70A8E28511E270070922F /* Community_HubApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
