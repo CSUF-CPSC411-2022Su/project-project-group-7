@@ -14,6 +14,8 @@
 		7AA70A9F28511E280070922F /* Community_HubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA70A9E28511E280070922F /* Community_HubTests.swift */; };
 		7AA70AA928511E280070922F /* Community_HubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA70AA828511E280070922F /* Community_HubUITests.swift */; };
 		7AA70AAB28511E280070922F /* Community_HubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA70AAA28511E280070922F /* Community_HubUITestsLaunchTests.swift */; };
+		7AA70AB828511E550070922F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7AA70AB728511E550070922F /* .gitignore */; };
+		7AA70ABA28511ECB0070922F /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7AA70AB928511ECB0070922F /* .gitattributes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		7AA70AA428511E280070922F /* Community HubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Community HubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA70AA828511E280070922F /* Community_HubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community_HubUITests.swift; sourceTree = "<group>"; };
 		7AA70AAA28511E280070922F /* Community_HubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community_HubUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7AA70AB728511E550070922F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7AA70AB928511ECB0070922F /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 		7AA70A8128511E270070922F = {
 			isa = PBXGroup;
 			children = (
+				7AA70AB928511ECB0070922F /* .gitattributes */,
+				7AA70AB728511E550070922F /* .gitignore */,
 				7AA70A8C28511E270070922F /* Community Hub */,
 				7AA70A9D28511E280070922F /* Community HubTests */,
 				7AA70AA728511E280070922F /* Community HubUITests */,
@@ -232,7 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AA70A9528511E280070922F /* Preview Assets.xcassets in Resources */,
+				7AA70AB828511E550070922F /* .gitignore in Resources */,
 				7AA70A9228511E280070922F /* Assets.xcassets in Resources */,
+				7AA70ABA28511ECB0070922F /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
