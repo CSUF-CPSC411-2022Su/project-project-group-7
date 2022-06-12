@@ -102,11 +102,11 @@
 		7AA70A8C28511E270070922F /* Community Hub */ = {
 			isa = PBXGroup;
 			children = (
+				7A58CCB72851221000FE87CF /* CommunityPost.swift */,
 				7AA70A8D28511E270070922F /* Community_HubApp.swift */,
 				7AA70A8F28511E270070922F /* ContentView.swift */,
 				7AA70A9128511E280070922F /* Assets.xcassets */,
 				7AA70A9328511E280070922F /* Preview Content */,
-				7A58CCB72851221000FE87CF /* CommunityPost.swift */,
 			);
 			path = "Community Hub";
 			sourceTree = "<group>";

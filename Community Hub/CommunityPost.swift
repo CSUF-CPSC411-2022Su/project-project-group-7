@@ -7,6 +7,28 @@
 
 import Foundation
 
+enum Type {
+    case volunteer
+    case commercial
+}
+
+// Adding needed information for creating a new post
 struct CommunityPost {
-    // code...
+    var title: String
+    var body: String
+    var type: Type?
+    var time: String
+    var location: String
+    
+    init() {
+        self.title = ""
+        self.body = ""
+        self.type = nil
+        self.time = ""
+        self.location = ""
+    }
+    
+//    init(title: String) {
+//        self.title = title
+//    }
 }
