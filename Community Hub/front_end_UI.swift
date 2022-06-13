@@ -6,6 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+
+class Homepage {
+    
+}
 
 struct Front_end {
     
