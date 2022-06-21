@@ -16,7 +16,9 @@
 		7AA70AAB28511E280070922F /* Community_HubUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA70AAA28511E280070922F /* Community_HubUITestsLaunchTests.swift */; };
 		7AA70AB828511E550070922F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7AA70AB728511E550070922F /* .gitignore */; };
 		7AA70ABA28511ECB0070922F /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 7AA70AB928511ECB0070922F /* .gitattributes */; };
-		C7A40BDF285122FE00123590 /* SignUpLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A40BDE285122FE00123590 /* SignUpLogIn.swift */; };
+		C79435F7286134CD00C3EA19 /* LogInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79435F6286134CD00C3EA19 /* LogInPage.swift */; };
+		C79435F92861435000C3EA19 /* SignUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79435F82861435000C3EA19 /* SignUpForm.swift */; };
+		C7A40BDF285122FE00123590 /* SignUpLogInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A40BDE285122FE00123590 /* SignUpLogInData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,9 @@
 		7AA70AAA28511E280070922F /* Community_HubUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Community_HubUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7AA70AB728511E550070922F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		7AA70AB928511ECB0070922F /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
-		C7A40BDE285122FE00123590 /* SignUpLogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLogIn.swift; sourceTree = "<group>"; };
+		C79435F6286134CD00C3EA19 /* LogInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPage.swift; sourceTree = "<group>"; };
+		C79435F82861435000C3EA19 /* SignUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpForm.swift; sourceTree = "<group>"; };
+		C7A40BDE285122FE00123590 /* SignUpLogInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLogInData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +110,9 @@
 				7AA70A8F28511E270070922F /* ContentView.swift */,
 				7AA70A9128511E280070922F /* Assets.xcassets */,
 				7AA70A9328511E280070922F /* Preview Content */,
-				C7A40BDE285122FE00123590 /* SignUpLogIn.swift */,
+				C7A40BDE285122FE00123590 /* SignUpLogInData.swift */,
+				C79435F6286134CD00C3EA19 /* LogInPage.swift */,
+				C79435F82861435000C3EA19 /* SignUpForm.swift */,
 			);
 			path = "Community Hub";
 			sourceTree = "<group>";
@@ -268,9 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79435F92861435000C3EA19 /* SignUpForm.swift in Sources */,
 				7AA70A9028511E270070922F /* ContentView.swift in Sources */,
 				7AA70A8E28511E270070922F /* Community_HubApp.swift in Sources */,
-				C7A40BDF285122FE00123590 /* SignUpLogIn.swift in Sources */,
+				C79435F7286134CD00C3EA19 /* LogInPage.swift in Sources */,
+				C7A40BDF285122FE00123590 /* SignUpLogInData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
