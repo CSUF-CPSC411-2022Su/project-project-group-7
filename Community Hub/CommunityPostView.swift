@@ -116,13 +116,3 @@ struct CommunityPostView_Previews: PreviewProvider {
         }
     }
 }
-
-struct ButtonDesign: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding()
-            .background(Color.black)
-            .foregroundColor(Color.white)
-            .cornerRadius(10)
-    }
-}

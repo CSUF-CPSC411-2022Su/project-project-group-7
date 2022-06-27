@@ -10,7 +10,7 @@ import SwiftUI
 struct VolunteerView: View {
     var body: some View {
         GeometryReader { geometry in
-            VStack{
+            VStack {
                 Image("Image")
                     .resizable()
                     .scaledToFit()
@@ -20,8 +20,8 @@ struct VolunteerView: View {
                 width: geometry.size.width,
                 height: geometry.size.height/4,
                 alignment: Alignment.center)
-            
-            VStack{
+
+            VStack {
                 Spacer()
                 Spacer()
                 Text("This is name")
@@ -37,7 +37,6 @@ struct VolunteerView: View {
                 height: geometry.size.height/1.5,
                 alignment: Alignment.center)
         }
-        
     }
 }
 
@@ -46,12 +45,3 @@ struct VolunteerView_Previews: PreviewProvider {
         VolunteerView()
     }
 }
-
-struct G7Text: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .border(.gray)
-            .padding()
-            .font(.custom("San Francisco", size: 21))
-            
-    } }

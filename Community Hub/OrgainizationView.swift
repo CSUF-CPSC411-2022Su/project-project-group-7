@@ -10,7 +10,7 @@ import SwiftUI
 struct OrgainizationView: View {
     var body: some View {
         GeometryReader { geometry in
-            VStack{
+            VStack {
                 Image("Image")
                     .resizable()
                     .scaledToFit()
@@ -21,8 +21,8 @@ struct OrgainizationView: View {
                 height: geometry.size.height/4,
                 alignment: Alignment.center
             )
-            
-            VStack{
+
+            VStack {
                 Spacer()
                 Text("This is Org name")
                     .modifier(G7Text())
@@ -33,8 +33,8 @@ struct OrgainizationView: View {
             }.frame(
                 width: geometry.size.width,
                 height: geometry.size.height/2,
-                alignment: Alignment.center)
-            
+                alignment: Alignment.center
+            )
         }
     }
 }

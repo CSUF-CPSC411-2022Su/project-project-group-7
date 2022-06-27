@@ -8,16 +8,15 @@
 import Foundation
 
 struct Profile {
-    var name:String
-    var email:String
-    
-    init (){
+    var name: String
+    var email: String
+
+    init() {
         self.name = ""
         self.email = ""
-        
     }
-    
-    init(name:String , email:String) {
+
+    init(name: String, email: String) {
         self.name = name
         self.email = email
     }

@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var selection: String? = nil
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
                 Text("Are you a Volunteer or an Orgainzation?")
                 Spacer()
-                
+
                 NavigationLink(destination: VolunteerView(), tag: "A", selection: $selection) { EmptyView() }
                 NavigationLink(destination: OrgainizationView(), tag: "B", selection: $selection) { EmptyView() }
-                
+
                 Button("Volunteer") {
                     selection = "A"
                 }.padding().modifier(FM3Text())
@@ -34,6 +34,7 @@ struct ProfileView: View {
         }
     }
 }
+
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()

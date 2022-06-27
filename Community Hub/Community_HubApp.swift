@@ -11,8 +11,8 @@ import SwiftUI
 struct Community_HubApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            ProfileView()
+            ContentView()
+//            ProfileView()
         }
     }
 }
