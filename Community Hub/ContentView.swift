@@ -8,19 +8,32 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var manager = CommunityPost()
+//    @State var loggedIn = false
+    
     var body: some View {
-        TabView {
-            CommunityPostList()
-                .tabItem {
-                    Image(systemName: "info")
-                    Text("View Post")
-                }
-            CommunityPostView()
-                .tabItem {
-                    Image(systemName: "plus")
-                    Text("Create Post")
-                }
-        }.environmentObject(manager)
+        LogInPage()
+//        TabView {
+////            LogInPage()
+////                .tabItem {
+////                    Image(systemName: "cross")
+////                    Text("Log In")
+////                }
+//            CommunityPostList()
+//                .tabItem {
+//                    Image(systemName: "info")
+//                    Text("View Post")
+//                }
+//            ProfileView()
+//                .tabItem {
+//                    Image(systemName: "person")
+//                    Text("View Profile")
+//                }
+//            CommunityPostView()
+//                .tabItem {
+//                    Image(systemName: "plus")
+//                    Text("Create Post")
+//                }
+//        }.environmentObject(manager)
     }
 }
 

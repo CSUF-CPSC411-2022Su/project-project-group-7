@@ -12,6 +12,7 @@ struct LogInPage: View {
     // @AppStorage var user: UserList
     @State var userName: String = ""
     @State var password: String = ""
+    @State private var isShowingDetailView = false
 
     var body: some View {
         NavigationView {
@@ -34,9 +35,15 @@ struct LogInPage: View {
                     }
                     HStack {
                         Spacer()
-                        NavigationLink(destination: LogInSuccess()) {
-                            Text("Log In").bold().padding() // Log in button directs user to their home page
-                        }
+//                        NavigationLink(destination: LogInSuccess()) {
+//                            Text("Log In").bold().padding() // Log in button directs user to their home page
+//                        }
+                            VStack {
+                                NavigationLink(destination: ProfileView(), isActive: $isShowingDetailView) { EmptyView() }
+                                Button("Login") {
+                                    self.isShowingDetailView = true
+                                }.modifier(ButtonDesign())
+                            }.padding()
                         Spacer()
                     }
                     HStack {
@@ -48,7 +55,7 @@ struct LogInPage: View {
                     Spacer()
                 }
             }
-        }
+        }.navigationBarHidden(true)
     }
 }
 

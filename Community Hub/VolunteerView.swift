@@ -11,7 +11,7 @@ struct VolunteerView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Image("Image")
+                Image("profile")
                     .resizable()
                     .scaledToFit()
                 Text("Profile Name")

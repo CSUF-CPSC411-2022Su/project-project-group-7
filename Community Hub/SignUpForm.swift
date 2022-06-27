@@ -17,37 +17,45 @@ struct SignUpForm: View {
     @State var lastName: String = ""
     @State var email: String = ""
     @State var address: String = ""
-  
+    @State private var isShowingDetailView = false
+
     var body: some View {
-        Text("Sign Up Page")
-        Text("Please fill in the following information").padding()
-    
-        VStack {
-            HStack {
-                Text("Username: ")
-                TextField("", text: $username).modifier(TextFieldUnderLines())
-            }
-            HStack {
-                Text("Password: ")
-                TextField("", text: $password).modifier(TextFieldUnderLines())
-            }
-            HStack {
-                Text("First Name: ")
-                TextField("", text: $firstName).modifier(TextFieldUnderLines())
-            }
-            HStack {
-                Text("Last Name: ")
-                TextField("", text: $lastName).modifier(TextFieldUnderLines())
-            }
-            HStack {
-                Text("Email Address: ")
-                TextField("", text: $email).modifier(TextFieldUnderLines())
-            }
-            HStack {
-                Text("Address: ")
-                TextField("", text: $address).modifier(TextFieldUnderLines())
-            }
-        }
+//        NavigationView {
+            VStack {
+                Text("Sign Up Page")
+                Text("Please fill in the following information").padding()
+                HStack {
+                    Text("Username: ")
+                    TextField("", text: $username).modifier(TextFieldUnderLines())
+                }
+                HStack {
+                    Text("Password: ")
+                    TextField("", text: $password).modifier(TextFieldUnderLines())
+                }
+                HStack {
+                    Text("First Name: ")
+                    TextField("", text: $firstName).modifier(TextFieldUnderLines())
+                }
+                HStack {
+                    Text("Last Name: ")
+                    TextField("", text: $lastName).modifier(TextFieldUnderLines())
+                }
+                HStack {
+                    Text("Email Address: ")
+                    TextField("", text: $email).modifier(TextFieldUnderLines())
+                }
+                HStack {
+                    Text("Address: ")
+                    TextField("", text: $address).modifier(TextFieldUnderLines())
+                }
+//                HStack {
+//                    Spacer()
+//                    NavigationLink(destination: ProfileView()) {
+//                        Text("Sign Up").bold().padding() // Log in button directs user to their home page
+//                    }
+//                }
+            }.padding()
+//        }.padding().navigationBarHidden(true)
     
         Spacer()
 
@@ -95,7 +103,7 @@ struct VolunteerSignUpForm: View {
         }.padding()
     
         HStack {
-            NavigationLink(destination: CompleteSignUpPage()) {
+            NavigationLink(destination: LogInPage()) {
                 Text("Complete Sign up").bold()
             }
         }
@@ -129,7 +137,7 @@ struct RecruiterSignUpForm: View {
                 .modifier(TextFieldUnderLines())
         }.padding()
         HStack {
-            NavigationLink(destination: CompleteSignUpPage()) {
+            NavigationLink(destination: LogInPage()) {
                 Text("Complete Sign up").bold()
             }
         }
