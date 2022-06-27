@@ -7,14 +7,42 @@
 
 import SwiftUI
 
+struct CommunityPostList: View {
+    @EnvironmentObject var manager: CommunityPost
+    var body: some View {
+        VStack {
+            List {
+                ForEach(manager.posts) {
+                    posts in
+                    VStack(alignment: .leading) {
+                        Text(posts.title)
+                            .font(.largeTitle)
+                        Text(posts.location)
+                            .font(.caption)
+                        Text(posts.time)
+                    }
+                }.onDelete {
+                    offset in
+                    manager.posts.remove(atOffsets: offset)
+                }
+                .onMove {
+                    offset, index in
+                    manager.posts.move(fromOffsets: offset,
+                                       toOffset: index)
+                }
+            }
+            EditButton()
+        }
+    }
+}
+
 struct CommunityPostView: View {
     @SceneStorage("titleText") var titleText: String = ""
     @SceneStorage("bodyText") var bodyText: String = ""
     @SceneStorage("timeText") var timeText: String = ""
     @SceneStorage("locationText") var locationText: String = ""
-    @State private var showCommercial = false
-    @State private var showVolunteer = false
-    
+    @EnvironmentObject var manager: CommunityPost
+
     var body: some View {
         NavigationView {
             VStack {
@@ -40,8 +68,7 @@ struct CommunityPostView: View {
                         .bold()
                     Spacer()
                 }
-                TextField("Body",text: $bodyText)
-                    .padding(.bottom, 200)
+                TextEditor(text: $bodyText)
                     .border(Color.black)
                 HStack {
                     Text("Time")
@@ -65,19 +92,15 @@ struct CommunityPostView: View {
                         .border(Color.black)
                 }
                 .padding(.bottom, 20)
-//                Button(action: {
-////                    CommunityFormView()
-//                }) {
-//                    Text("Submit")
-//                        .modifier(ButtonDesign())
-//                }
-                .padding(.bottom, 30)
-                NavigationLink(destination: CommunityFormView()) {
+                Button(action: {
+                    manager.posts.append(Post(title: titleText, body: bodyText, time: timeText, location: locationText))
+                    titleText = ""
+                    bodyText = ""
+                    timeText = ""
+                    locationText = ""
+                }) {
                     Text("Submit")
-                        .bold()
                         .modifier(ButtonDesign())
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    Spacer()
                 }
                 .padding()
             }

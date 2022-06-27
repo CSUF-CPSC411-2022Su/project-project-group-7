@@ -7,28 +7,21 @@
 
 import Foundation
 
-enum Type {
-    case volunteer
-    case commercial
+class CommunityPost: ObservableObject {
+    @Published var posts: [Post] = []
+
+    init() {
+        posts.append(Post(title: "Titan hall", body: "Help out at the Titan Hall!", time: "January 10, 2022 - 10:00AM", location: "800 N State College Blvd., Fullerton CA 92831"))
+        posts.append(Post(title: "Titan gym", body: "Recruiting new manager position at the Titan gym!", time: "May 20, 2022 - 12:00PM", location: "Gymnasium Campus Dr. Fullerton, CA 92831"))
+    }
 }
 
-// Adding needed information for creating a new post
-struct CommunityPost {
+struct Post: Identifiable {
+    /// The Identifiable protocol requires an id property that should be a unique value
+    /// UUID generates a unique random hexadecimal string
+    var id = UUID()
     var title: String
     var body: String
-    var type: Type?
     var time: String
     var location: String
-    
-    init() {
-        self.title = ""
-        self.body = ""
-        self.type = nil
-        self.time = ""
-        self.location = ""
-    }
-    
-//    init(title: String) {
-//        self.title = title
-//    }
 }

@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var manager = CommunityPost()
     var body: some View {
-        NavigationView {
-            NavigationLink(destination: CommunityPostView()) {
-                Text("CommunityPostView")
-            }
-        }
+        TabView {
+            CommunityPostList()
+                .tabItem {
+                    Image(systemName: "info")
+                    Text("View Post")
+                }
+            CommunityPostView()
+                .tabItem {
+                    Image(systemName: "plus")
+                    Text("Create Post")
+                }
+        }.environmentObject(manager)
     }
 }
 
