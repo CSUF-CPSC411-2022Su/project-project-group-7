@@ -39,7 +39,7 @@ struct LogInPage: View {
 //                            Text("Log In").bold().padding() // Log in button directs user to their home page
 //                        }
                             VStack {
-                                NavigationLink(destination: ProfileView(), isActive: $isShowingDetailView) { EmptyView() }
+                                NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) { EmptyView() }
                                 Button("Login") {
                                     self.isShowingDetailView = true
                                 }.modifier(ButtonDesign())
