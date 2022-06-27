@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SignUpForm: View {
   // Placeholder variables, later use the ones at SignUpLogInData.swift
+  //@AppStorage var user: UserList
   @State var username: String = ""
   @State var password: String = ""
   @State var firstName: String = ""
@@ -24,27 +25,27 @@ struct SignUpForm: View {
     VStack {
       HStack{
         Text("Username: ")
-        TextField("", text: $username).overlay(VStack{Divider().offset(x: 0, y: 15)})
+        TextField("", text: $username).modifier(TextFieldUnderLines())
       }
       HStack{
         Text("Password: ")
-        TextField("", text: $password).overlay(VStack{Divider().offset(x: 0, y: 15)})
+        TextField("", text: $password).modifier(TextFieldUnderLines())
       }
       HStack{
         Text("First Name: ")
-        TextField("", text: $firstName).overlay(VStack{Divider().offset(x: 0, y: 15)})
+        TextField("", text: $firstName).modifier(TextFieldUnderLines())
       }
       HStack{
         Text("Last Name: ")
-        TextField("", text: $lastName).overlay(VStack{Divider().offset(x: 0, y: 15)})
+        TextField("", text: $lastName).modifier(TextFieldUnderLines())
       }
       HStack{
         Text("Email Address: ")
-        TextField("", text: $email).overlay(VStack{Divider().offset(x: 0, y: 15)})
+        TextField("", text: $email).modifier(TextFieldUnderLines())
       }
       HStack{
         Text("Address: ")
-        TextField("", text: $address).overlay(VStack{Divider().offset(x: 0, y: 15)})
+        TextField("", text: $address).modifier(TextFieldUnderLines())
       }
     }
     
@@ -79,19 +80,19 @@ struct VolunteerSignUpForm: View {
     VStack(alignment: .center) {
       Text("What are some of your strengths?")
       TextField("Your response here", text: $strengths)
-        .overlay(VStack{Divider().offset(x: 0, y: 15)})
+        .modifier(TextFieldUnderLines())
     }.padding()
     
     VStack {
       Text("Why did you want to volunteer?")
       TextField("Your response here", text: $reasonToVolunteer)
-        .overlay(VStack{Divider().offset(x: 0, y: 15)})
+        .modifier(TextFieldUnderLines())
     }.padding()
     
     VStack {
       Text("Tell us some interesting things about yourself.")
       TextField("Your response here", text: $thingsAboutUser)
-        .overlay(VStack{Divider().offset(x: 0, y: 15)})
+        .modifier(TextFieldUnderLines())
     }.padding()
     
     HStack {
@@ -116,17 +117,17 @@ struct RecruiterSignUpForm: View {
     VStack {
       Text("Your organization type?")
       TextField("Your response here", text: $organizationType)
-        .overlay(VStack{Divider().offset(x: 0, y: 15)})
+        .modifier(TextFieldUnderLines())
     }.padding()
     VStack {
       Text("Why do you need volunteers?")
       TextField("Your response here", text: $reasonForVolunteers)
-        .overlay(VStack{Divider().offset(x: 0, y: 15)})
+        .modifier(TextFieldUnderLines())
     }.padding()
     VStack {
       Text("Things you want volunteers to know about your company")
       TextField("Your response here", text: $thingsToKnowAboutCompany)
-        .overlay(VStack{Divider().offset(x: 0, y: 15)})
+        .modifier(TextFieldUnderLines())
     }.padding()
     HStack {
       NavigationLink(destination: CompleteSignUpPage()) {

@@ -19,6 +19,7 @@
 		C79435F7286134CD00C3EA19 /* LogInPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79435F6286134CD00C3EA19 /* LogInPage.swift */; };
 		C79435F92861435000C3EA19 /* SignUpForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79435F82861435000C3EA19 /* SignUpForm.swift */; };
 		C7A40BDF285122FE00123590 /* SignUpLogInData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A40BDE285122FE00123590 /* SignUpLogInData.swift */; };
+		C7FA777F286A222200287EBE /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FA777E286A222200287EBE /* Modifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		C79435F6286134CD00C3EA19 /* LogInPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPage.swift; sourceTree = "<group>"; };
 		C79435F82861435000C3EA19 /* SignUpForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpForm.swift; sourceTree = "<group>"; };
 		C7A40BDE285122FE00123590 /* SignUpLogInData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpLogInData.swift; sourceTree = "<group>"; };
+		C7FA777E286A222200287EBE /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				C7A40BDE285122FE00123590 /* SignUpLogInData.swift */,
 				C79435F6286134CD00C3EA19 /* LogInPage.swift */,
 				C79435F82861435000C3EA19 /* SignUpForm.swift */,
+				C7FA777E286A222200287EBE /* Modifiers.swift */,
 			);
 			path = "Community Hub";
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				7AA70A9028511E270070922F /* ContentView.swift in Sources */,
 				7AA70A8E28511E270070922F /* Community_HubApp.swift in Sources */,
 				C79435F7286134CD00C3EA19 /* LogInPage.swift in Sources */,
+				C7FA777F286A222200287EBE /* Modifiers.swift in Sources */,
 				C7A40BDF285122FE00123590 /* SignUpLogInData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

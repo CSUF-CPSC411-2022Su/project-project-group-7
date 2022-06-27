@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct LogInPage: View {
+  //@AppStorage var user: UserList
   @State var userName: String = ""
   @State var password: String = ""
   
@@ -21,17 +22,14 @@ struct LogInPage: View {
           HStack {
             Spacer()
             Text("Username: ")
-            // .autocapitalization(.none) will make the first letter lowercase, delete it later if you want to make the first letter automatically uppercase
-            TextField("Enter your user name", text: $userName).autocapitalization(.none)
-              .overlay(VStack{Divider().offset(x: 0, y: 15)})     // Creates an underline for Textfield
+            TextField("Enter your user name", text: $userName).modifier(TextFieldUnderLines())
             Spacer()
           }
           HStack {
             Spacer()
             Text("Password:  ")
             // SecureField() blurs out the characters for security
-            SecureField("Enter your password", text: $password).autocapitalization(.none)
-              .overlay(VStack{Divider().offset(x: 0, y: 15)})
+            SecureField("Enter your password", text: $password).modifier(TextFieldUnderLines())
             Spacer()
           }
           HStack {
@@ -61,9 +59,3 @@ struct LogInSuccess: View {
     Text("Login success!")
   }
 }
-
-//struct SignUpForm: View {
-//  var body: some View {
-//    Text("Test navigation view")
-//  }
-//}
