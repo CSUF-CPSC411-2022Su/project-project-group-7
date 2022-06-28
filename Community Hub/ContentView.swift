@@ -11,7 +11,7 @@ struct ContentView: View {
 //    @State var loggedIn = false
     
     var body: some View {
-        LogInPage()
+        LogInPage().environmentObject(UserList()) 
 //        TabView {
 ////            LogInPage()
 ////                .tabItem {

@@ -10,14 +10,14 @@ import SwiftUI
 
 struct SignUpForm: View {
     // Placeholder variables, later use the ones at SignUpLogInData.swift
-    @StateObject var user = UserList()
-    @State var username: String = ""
-    @State var password: String = ""
-    @State var firstName: String = ""
-    @State var lastName: String = ""
-    @State var email: String = ""
-    @State var address: String = ""
-    @State var type: String = "Volunteer"
+    @EnvironmentObject var user: UserList
+    @SceneStorage("username") var username: String = ""
+    @SceneStorage("password") var password: String = ""
+    @SceneStorage("firstName") var firstName: String = ""
+    @SceneStorage("lastName") var lastName: String = ""
+    @SceneStorage("email") var email: String = ""
+    @SceneStorage("address") var address: String = ""
+    @SceneStorage("type") var type: String = "Volunteer"
     @State private var isShowingDetailView = false
 
     var body: some View {
@@ -79,15 +79,23 @@ struct SignUpForm: View {
 //                Text("Complete Sign up").bold()
 //            }.modifier(ButtonDesign())
             
+            
             Button(action: {
                 print("Successfully added a new user to your list!")
-                user.userList.append(SignUpInformation(username: username,
+                self.user.userList.append(SignUpInformation(username: username,
                                                        password: password,
                                                        firstName: firstName,
                                                        lastName: lastName,
                                                        email: email,
                                                        address: address,
                                                        type: type))
+                username = ""
+                password = ""
+                firstName = ""
+                lastName = ""
+                email = ""
+                address = ""
+                type = ""
                 print("Executed add statement.")
             })
             {
