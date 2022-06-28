@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct VolunteerView: View {
+    @EnvironmentObject var user: UserList
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -24,7 +26,7 @@ struct VolunteerView: View {
             VStack {
                 Spacer()
                 Spacer()
-                Text("This is name")
+                Text(user.currentUser.username)
                     .modifier(G7Text())
                 Text("This is age")
                     .modifier(G7Text())
