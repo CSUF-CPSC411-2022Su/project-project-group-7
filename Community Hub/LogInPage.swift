@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LogInPage: View {
     // @AppStorage var user: UserList
-    @StateObject var users = UserList()
+    @EnvironmentObject var users: UserList
     @State var userName: String = ""
     @State var password: String = ""
     @State private var isShowingDetailView = false
@@ -54,9 +54,11 @@ struct LogInPage: View {
                                 }.modifier(ButtonDesign())
                             } else {
                                 Button("Login") {
+                                    users.printList() // For debugging purposes, delete this line later
                                     displayLoginError = "Validation failed, please try again."
                                 }.modifier(ButtonDesign())
                             }
+                       
                             
                             
 //                            ///Version #1 for login validation - Login button is grayed out and will be unresponsive

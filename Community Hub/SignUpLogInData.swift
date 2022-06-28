@@ -18,6 +18,13 @@ class UserList: ObservableObject {
                                           email: "tuffytitan@csu.fullerton.edu",
                                           address: "123 N Fullerton Rd",
                                           type: "Volunteer"))
+        userList.append(SignUpInformation(username: "x12345",
+                                          password: "abcd",
+                                          firstName: "Alan",
+                                          lastName: "Guan",
+                                          email: "tuffytitan@csu.fullerton.edu",
+                                          address: "123 N Fullerton Rd",
+                                          type: "Volunteer"))
     }
 
     func addUsers(_ newUsername: String,
@@ -36,6 +43,8 @@ class UserList: ObservableObject {
                                           email: newEmail,
                                           address: newAddress,
                                           type: newType))
+        
+        print("addUsers() has be called.")  // For debugging purposes, delete this line later
     }
 
     func loginValidation(_ inputUsername: String, _ inputPassword: String) -> Bool {
@@ -50,6 +59,13 @@ class UserList: ObservableObject {
             }
         }
         return false
+    }
+    
+    // For debugging purposes, delete this function later
+    func printList() {
+        for user in userList {
+            print(user.username)
+        }
     }
 }
 

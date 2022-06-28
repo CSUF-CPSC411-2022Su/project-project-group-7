@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 struct SignUpForm: View {
-    // Placeholder variables, later use the ones at SignUpLogInData.swift
-    @EnvironmentObject var user: UserList
     @SceneStorage("username") var username: String = ""
     @SceneStorage("password") var password: String = ""
     @SceneStorage("firstName") var firstName: String = ""
@@ -18,6 +16,7 @@ struct SignUpForm: View {
     @SceneStorage("email") var email: String = ""
     @SceneStorage("address") var address: String = ""
     @SceneStorage("type") var type: String = "Volunteer"
+    @EnvironmentObject var user: UserList
     @State private var isShowingDetailView = false
 
     var body: some View {
@@ -81,14 +80,9 @@ struct SignUpForm: View {
             
             
             Button(action: {
-                print("Successfully added a new user to your list!")
-                self.user.userList.append(SignUpInformation(username: username,
-                                                       password: password,
-                                                       firstName: firstName,
-                                                       lastName: lastName,
-                                                       email: email,
-                                                       address: address,
-                                                       type: type))
+//                print("Successfully added a new user to your list!") // For debugging purposes, delete this line later
+                user.addUsers(username, password, firstName, lastName, email, address, type)
+                print("\(username) with password: \(password) has been added to the list.") // For debugging purposes, delete this line later
                 username = ""
                 password = ""
                 firstName = ""
@@ -96,7 +90,7 @@ struct SignUpForm: View {
                 email = ""
                 address = ""
                 type = ""
-                print("Executed add statement.")
+                print("Executed add statement.")    // For debugging purposes, delete this line later
             })
             {
                 Text("Add new user")
