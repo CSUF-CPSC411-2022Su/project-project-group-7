@@ -10,9 +10,11 @@ import SwiftUI
 
 struct LogInPage: View {
     // @AppStorage var user: UserList
+    @StateObject var users = UserList()
     @State var userName: String = ""
     @State var password: String = ""
     @State private var isShowingDetailView = false
+    @State var displayLoginError: String = ""
 
     var body: some View {
         NavigationView {
@@ -23,7 +25,7 @@ struct LogInPage: View {
                     HStack {
                         Spacer()
                         Text("Username: ")
-                        TextField("Enter your user name", text: $userName).modifier(TextFieldUnderLines())
+                        TextField("Enter your username", text: $userName).modifier(TextFieldUnderLines())
                         Spacer()
                     }
                     HStack {
@@ -33,17 +35,39 @@ struct LogInPage: View {
                         SecureField("Enter your password", text: $password).modifier(TextFieldUnderLines())
                         Spacer()
                     }
+                    
+                    // This text will pop up if a validation error occurs, otherwise it's just an empty string
+                    Text("\(displayLoginError)").padding()
+                    
                     HStack {
                         Spacer()
 //                        NavigationLink(destination: LogInSuccess()) {
 //                            Text("Log In").bold().padding() // Log in button directs user to their home page
 //                        }
-                            VStack {
-                                NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) { EmptyView() }
-                                Button("Login") {
-                                    self.isShowingDetailView = true
+                        VStack {
+                            // Version 2 for login navigation - if the username and password is correct,
+                            // it redirects the user to the profile view,
+                            // otherwise an error message will appear
+                            if users.loginValidation(userName, password) == true {
+                                NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) {
+                                    Text("Login")
                                 }.modifier(ButtonDesign())
-                            }.padding()
+                            } else {
+                                Button("Login") {
+                                    displayLoginError = "Validation failed, please try again."
+                                }.modifier(ButtonDesign())
+                            }
+                            
+                            
+//                            ///Version #1 for login validation - Login button is grayed out and will be unresponsive
+//                            // until the user enters the correct username and password, then the button will turn blue
+//                            // and is clickable for login.
+//                            NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) {
+//                                Text("Login")
+//                            }.disabled(users.loginValidation(userName, password) == false)
+//                             //.modifier(ButtonDesign())
+                            
+                        }.padding()
                         Spacer()
                     }
                     HStack {
