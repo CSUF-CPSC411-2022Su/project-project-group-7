@@ -10,67 +10,90 @@ import SwiftUI
 
 struct SignUpForm: View {
     // Placeholder variables, later use the ones at SignUpLogInData.swift
-    // @AppStorage var user: UserList
+    @StateObject var user = UserList()
     @State var username: String = ""
     @State var password: String = ""
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
     @State var address: String = ""
+    @State var type: String = "Volunteer"
     @State private var isShowingDetailView = false
 
     var body: some View {
 //        NavigationView {
-            VStack {
-                Text("Sign Up Page")
-                Text("Please fill in the following information").padding()
-                HStack {
-                    Text("Username: ")
-                    TextField("", text: $username).modifier(TextFieldUnderLines())
-                }
-                HStack {
-                    Text("Password: ")
-                    TextField("", text: $password).modifier(TextFieldUnderLines())
-                }
-                HStack {
-                    Text("First Name: ")
-                    TextField("", text: $firstName).modifier(TextFieldUnderLines())
-                }
-                HStack {
-                    Text("Last Name: ")
-                    TextField("", text: $lastName).modifier(TextFieldUnderLines())
-                }
-                HStack {
-                    Text("Email Address: ")
-                    TextField("", text: $email).modifier(TextFieldUnderLines())
-                }
-                HStack {
-                    Text("Address: ")
-                    TextField("", text: $address).modifier(TextFieldUnderLines())
-                }
+        VStack {
+            Text("Sign Up Page")
+            Text("Please fill in the following information").padding()
+            HStack {
+                Text("Username: ")
+                TextField("", text: $username).modifier(TextFieldUnderLines())
+            }
+            HStack {
+                Text("Password: ")
+                TextField("", text: $password).modifier(TextFieldUnderLines())
+            }
+            HStack {
+                Text("First Name: ")
+                TextField("", text: $firstName).modifier(TextFieldUnderLines())
+            }
+            HStack {
+                Text("Last Name: ")
+                TextField("", text: $lastName).modifier(TextFieldUnderLines())
+            }
+            HStack {
+                Text("Email Address: ")
+                TextField("", text: $email).modifier(TextFieldUnderLines())
+            }
+            HStack {
+                Text("Address: ")
+                TextField("", text: $address).modifier(TextFieldUnderLines())
+            }
 //                HStack {
 //                    Spacer()
 //                    NavigationLink(destination: ProfileView()) {
 //                        Text("Sign Up").bold().padding() // Log in button directs user to their home page
 //                    }
 //                }
-            }.padding()
+        }.padding()
 //        }.padding().navigationBarHidden(true)
     
         Spacer()
 
         VStack(alignment: .center) {
-            Text("Are you a Volunteer or Recruiter?")
-      
-            HStack {
-                Text("I'm a... ")
-                NavigationLink(destination: VolunteerSignUpForm()) {
-                    Text("🙋Volunteer").bold()
-                }
-                NavigationLink(destination: RecruiterSignUpForm()) {
-                    Text("🤵Recruiter").bold()
-                }
+//            Text("Are you a Volunteer or Recruiter?")
+//
+//            HStack {
+//                Text("I'm a... ")
+//                NavigationLink(destination: VolunteerSignUpForm()) {
+//                    Text("🙋Volunteer").bold()
+//                }
+//                NavigationLink(destination: RecruiterSignUpForm()) {
+//                    Text("🤵Recruiter").bold()
+//                }
+//            }
+            //user.addUsers(username, password, firstName, lastName, email, address, "Volunteer")
+            
+            
+//            NavigationLink(destination: LogInPage()) {
+//                Text("Complete Sign up").bold()
+//            }.modifier(ButtonDesign())
+            
+            Button(action: {
+                print("Successfully added a new user to your list!")
+                user.userList.append(SignUpInformation(username: username,
+                                                       password: password,
+                                                       firstName: firstName,
+                                                       lastName: lastName,
+                                                       email: email,
+                                                       address: address,
+                                                       type: type))
+                print("Executed add statement.")
+            })
+            {
+                Text("Add new user")
             }
+            
         }
         Spacer()
     }
