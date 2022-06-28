@@ -7,34 +7,34 @@
 
 import Foundation
 
-class UserList: ObservableObject , Identifiable {
+class UserList: ObservableObject {
     @Published var userList: [SignUpInformation] = []
-    @Published var currentUser : SignUpInformation
+    @Published var currentUser: SignUpInformation
+
     init() {
-        currentUser = SignUpInformation(username: "tuffytitan",
-                                       password: "123456abc",
-                                       firstName: "Alan",
-                                       lastName: "Guan",
-                                       email: "tuffytitan@csu.fullerton.edu",
-                                       address: "123 N Fullerton Rd",
-                                       type: "Volunteer")
+        currentUser = SignUpInformation(username: "123",
+                                        password: "abc",
+                                        firstName: "Tuffy",
+                                        lastName: "Titan",
+                                        email: "123@csu.fullerton.edu",
+                                        address: "9801 N Colima Rd",
+                                        type: "Volunteer")
         userList.append(SignUpInformation(username: "tuffytitan",
                                           password: "123456abc",
                                           firstName: "Alan",
                                           lastName: "Guan",
                                           email: "tuffytitan@csu.fullerton.edu",
-                                          address: "123 N Fullerton Rd",
+                                          address: "123 Fullerton Rd",
                                           type: "Volunteer"))
         userList.append(SignUpInformation(username: "x12345",
                                           password: "abcd",
-                                          firstName: "Alan",
-                                          lastName: "Guan",
-                                          email: "tuffytitan@csu.fullerton.edu",
-                                          address: "123 N Fullerton Rd",
-                                          type: "Volunteer"))
-        
+                                          firstName: "Joe",
+                                          lastName: "Wlliams",
+                                          email: "jwilliams@csu.fullerton.edu",
+                                          address: "8279 Broadway Ave.",
+                                          type: "Recruiter"))
     }
-    
+
     func addUsers(_ newUsername: String,
                   _ newPassword: String,
                   _ newFirstName: String,
@@ -62,8 +62,8 @@ class UserList: ObservableObject , Identifiable {
         // Else just return false indicating the user is not registered,
         // or has entered an incorrect username or password.
         for user in userList {
+            currentUser = user
             if user.username == inputUsername, user.password == inputPassword {
-               currentUser = user
                 return true
             }
         }
@@ -90,18 +90,3 @@ struct SignUpInformation: Identifiable {
     var type: String
 }
 
-// Additional questions for volunteer users
-struct SignUpInformationVolunteer: Identifiable {
-    var id = UUID()
-    var strengths: String
-    var reasonToVolunteer: String
-    var thingsAboutUser: String
-}
-
-// Additional questions for company users
-struct SignUpInformationCompany: Identifiable {
-    var id = UUID()
-    var organizationType: String
-    var reasonForVolunteers: String
-    var thingsToKnowAboutCompany: String
-}
