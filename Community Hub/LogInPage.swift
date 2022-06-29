@@ -49,7 +49,7 @@ struct LogInPage: View {
                             // it redirects the user to the profile view,
                             // otherwise an error message will appear
 
-                            NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) {EmptyView()}
+                            NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) { EmptyView() }
                             Button("Login") {
                                 if users.loginValidation(userName, password) == true {
                                     isShowingDetailView = true
@@ -60,8 +60,6 @@ struct LogInPage: View {
                                 }
                             }.modifier(ButtonDesign())
                        
-                            
-                            
                             //                            ///Version #1 for login validation - Login button is grayed out and will be unresponsive
                             //                            // until the user enters the correct username and password, then the button will turn blue
                             //                            // and is clickable for login.
@@ -85,4 +83,3 @@ struct LogInPage: View {
         }.navigationBarHidden(true)
     }
 }
-

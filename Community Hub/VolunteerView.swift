@@ -9,7 +9,7 @@ import SwiftUI
 
 struct VolunteerView: View {
     @EnvironmentObject var user: UserList
-    
+
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -18,27 +18,26 @@ struct VolunteerView: View {
                     .scaledToFit()
                     .padding()
                 Spacer()
-                
+
             }.frame(
                 width: geometry.size.width,
                 height: geometry.size.height,
                 alignment: Alignment.center)
-            
-            VStack {
 
-                HStack(alignment: .lastTextBaseline){
+            VStack {
+                HStack(alignment: .lastTextBaseline) {
                     Text("Profile Name: ")
                     Text(user.currentUser.username)
                 }.padding()
-                HStack(alignment: .lastTextBaseline){
+                HStack(alignment: .lastTextBaseline) {
                     Text("First Name: ")
                     Text(user.currentUser.firstName)
                 }.padding()
-                HStack(alignment: .lastTextBaseline){
+                HStack(alignment: .lastTextBaseline) {
                     Text("Last Name: ")
                     Text(user.currentUser.lastName)
                 }.padding()
-                HStack(alignment: .lastTextBaseline){
+                HStack(alignment: .lastTextBaseline) {
                     Text("Email: ")
                     Text(user.currentUser.email)
                 }.padding()
@@ -47,7 +46,7 @@ struct VolunteerView: View {
                 width: geometry.size.width,
                 height: geometry.size.height,
                 alignment: Alignment.bottomLeading)
-            .modifier(G7Text())
+                .modifier(G7Text())
         }
     }
 }

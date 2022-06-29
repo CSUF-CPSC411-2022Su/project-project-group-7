@@ -57,7 +57,6 @@ struct SignUpForm: View {
 
         }.padding()
 
-
         Spacer()
         VStack(alignment: .center) {
             Button("Complete Sign Up") {
@@ -92,4 +91,3 @@ struct SignUpComplete: View {
         }
     }
 }
-

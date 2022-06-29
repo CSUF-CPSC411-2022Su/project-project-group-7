@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserList: ObservableObject , Identifiable {
+class UserList: ObservableObject, Identifiable {
     @Published var userList: [SignUpInformation] = []
 
     @Published var currentUser: SignUpInformation
@@ -36,9 +36,8 @@ class UserList: ObservableObject , Identifiable {
                                           email: "jwilliams@csu.fullerton.edu",
                                           address: "8279 Broadway Ave.",
                                           type: "Recruiter"))
-
     }
-    
+
     func addUsers(_ newUsername: String,
                   _ newPassword: String,
                   _ newFirstName: String,
@@ -55,8 +54,8 @@ class UserList: ObservableObject , Identifiable {
                                           email: newEmail,
                                           address: newAddress,
                                           type: newType))
-        
-        print("addUsers() has be called.")  // For debugging purposes, delete this line later
+
+        print("addUsers() has be called.") // For debugging purposes, delete this line later
     }
 
     func loginValidation(_ inputUsername: String, _ inputPassword: String) -> Bool {
@@ -68,13 +67,13 @@ class UserList: ObservableObject , Identifiable {
         for user in userList {
             currentUser = user
             if user.username == inputUsername, user.password == inputPassword {
-               currentUser = user
+                currentUser = user
                 return true
             }
         }
         return false
     }
-    
+
     // For debugging purposes, delete this function later
     func printList() {
         for user in userList {
@@ -94,4 +93,3 @@ struct SignUpInformation: Identifiable {
     var address: String
     var type: String
 }
-

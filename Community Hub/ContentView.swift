@@ -9,9 +9,8 @@ import SwiftUI
 struct ContentView: View {
     @StateObject var manager = CommunityPost()
 
-    
     var body: some View {
-        LogInPage().environmentObject(UserList()) 
+        LogInPage().environmentObject(UserList())
     }
 }
 
