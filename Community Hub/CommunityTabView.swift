@@ -18,7 +18,7 @@ struct CommunityTabView: View {
                     Image(systemName: "info")
                     Text("View Post")
                 }
-            ProfileView()
+            VolunteerView()
                 .tabItem {
                     Image(systemName: "person")
                     Text("View Profile")

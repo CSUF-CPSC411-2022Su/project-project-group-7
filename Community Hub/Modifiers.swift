@@ -21,7 +21,6 @@ struct G7Text: ViewModifier {
     func body(content: Content) -> some View {
         content
             .border(.gray)
-            .padding()
             .font(.custom("San Francisco", size: 21))
     }
 }
