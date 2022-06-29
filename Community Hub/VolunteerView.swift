@@ -8,34 +8,44 @@
 import SwiftUI
 
 struct VolunteerView: View {
+    @EnvironmentObject var user: UserList
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 Image("profile")
                     .resizable()
                     .scaledToFit()
-                Text("Profile Name")
-                    .modifier(G7Text())
+                    .padding()
+                Spacer()
+                
             }.frame(
                 width: geometry.size.width,
-                height: geometry.size.height/4,
+                height: geometry.size.height,
                 alignment: Alignment.center)
-
+            
             VStack {
-                Spacer()
-                Spacer()
-                Text("This is name")
-                    .modifier(G7Text())
-                Text("This is age")
-                    .modifier(G7Text())
-                Text("This is location")
-                    .modifier(G7Text())
-                Text("This is About me")
-                    .modifier(G7Text())
+                HStack(alignment: .lastTextBaseline){
+                    Text("Profile Name: ")
+                    Text(user.currentUser.username)
+                }.padding()
+                HStack(alignment: .lastTextBaseline){
+                    Text("First Name: ")
+                    Text(user.currentUser.firstName)
+                }.padding()
+                HStack(alignment: .lastTextBaseline){
+                    Text("Last Name: ")
+                    Text(user.currentUser.lastName)
+                }.padding()
+                HStack(alignment: .lastTextBaseline){
+                    Text("Email: ")
+                    Text(user.currentUser.email)
+                }.padding()
             }.frame(
                 width: geometry.size.width,
-                height: geometry.size.height/1.5,
-                alignment: Alignment.center)
+                height: geometry.size.height,
+                alignment: Alignment.bottomLeading)
+            .modifier(G7Text())
         }
     }
 }
