@@ -49,6 +49,7 @@ struct SignUpForm: View {
                 Text("Address: ")
                 TextField("", text: $address).modifier(TextFieldUnderLines())
             }
+
             HStack {
                 Text("Volunteer/Recruiter: ")
                 TextField("", text: $type).modifier(TextFieldUnderLines())
@@ -56,8 +57,8 @@ struct SignUpForm: View {
 
         }.padding()
 
-        Spacer()
 
+        Spacer()
         VStack(alignment: .center) {
             Button("Complete Sign Up") {
                 user.addUsers(username, password, firstName, lastName, email, address, type)

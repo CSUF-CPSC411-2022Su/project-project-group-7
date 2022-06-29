@@ -7,8 +7,9 @@
 
 import Foundation
 
-class UserList: ObservableObject {
+class UserList: ObservableObject , Identifiable {
     @Published var userList: [SignUpInformation] = []
+
     @Published var currentUser: SignUpInformation
 
     init() {
@@ -19,6 +20,7 @@ class UserList: ObservableObject {
                                         email: "123@csu.fullerton.edu",
                                         address: "9801 N Colima Rd",
                                         type: "Volunteer")
+
         userList.append(SignUpInformation(username: "tuffytitan",
                                           password: "123456abc",
                                           firstName: "Alan",
@@ -26,6 +28,7 @@ class UserList: ObservableObject {
                                           email: "tuffytitan@csu.fullerton.edu",
                                           address: "123 Fullerton Rd",
                                           type: "Volunteer"))
+
         userList.append(SignUpInformation(username: "x12345",
                                           password: "abcd",
                                           firstName: "Joe",
@@ -33,8 +36,9 @@ class UserList: ObservableObject {
                                           email: "jwilliams@csu.fullerton.edu",
                                           address: "8279 Broadway Ave.",
                                           type: "Recruiter"))
-    }
 
+    }
+    
     func addUsers(_ newUsername: String,
                   _ newPassword: String,
                   _ newFirstName: String,
@@ -64,6 +68,7 @@ class UserList: ObservableObject {
         for user in userList {
             currentUser = user
             if user.username == inputUsername, user.password == inputPassword {
+               currentUser = user
                 return true
             }
         }
