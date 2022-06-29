@@ -25,6 +25,7 @@ struct VolunteerView: View {
                 alignment: Alignment.center)
             
             VStack {
+
                 HStack(alignment: .lastTextBaseline){
                     Text("Profile Name: ")
                     Text(user.currentUser.username)
@@ -41,6 +42,7 @@ struct VolunteerView: View {
                     Text("Email: ")
                     Text(user.currentUser.email)
                 }.padding()
+
             }.frame(
                 width: geometry.size.width,
                 height: geometry.size.height,

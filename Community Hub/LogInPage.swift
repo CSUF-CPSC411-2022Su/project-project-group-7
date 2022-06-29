@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct LogInPage: View {
-    // @AppStorage var user: UserList
     @EnvironmentObject var users: UserList
     @State var userName: String = ""
     @State var password: String = ""
@@ -41,6 +40,7 @@ struct LogInPage: View {
                     
                     HStack {
                         Spacer()
+
                         //                        NavigationLink(destination: LogInSuccess()) {
                         //                            Text("Log In").bold().padding() // Log in button directs user to their home page
                         //                        }
@@ -48,18 +48,18 @@ struct LogInPage: View {
                             // Version 2 for login navigation - if the username and password is correct,
                             // it redirects the user to the profile view,
                             // otherwise an error message will appear
-                            
-                            NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) {
-                                EmptyView()}
+
+                            NavigationLink(destination: CommunityTabView(), isActive: $isShowingDetailView) {EmptyView()}
                             Button("Login") {
                                 if users.loginValidation(userName, password) == true {
-                                    isShowingDetailView = true}
-                                else{
-                                    users.printList() // For debugging purposes, delete this line later
+                                    isShowingDetailView = true
+                                }
+                                else {
+                                    users.printList()
                                     displayLoginError = "Validation failed, please try again."
-                                }}.modifier(ButtonDesign())
-                            
-                            
+                                }
+                            }.modifier(ButtonDesign())
+                       
                             
                             
                             //                            ///Version #1 for login validation - Login button is grayed out and will be unresponsive
@@ -86,10 +86,3 @@ struct LogInPage: View {
     }
 }
 
-// This is a placeholder for the login page
-// delete this later when merged with teammate's code
-struct LogInSuccess: View {
-    var body: some View {
-        Text("Login success!")
-    }
-}

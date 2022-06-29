@@ -15,9 +15,11 @@ struct SignUpForm: View {
     @SceneStorage("lastName") var lastName: String = ""
     @SceneStorage("email") var email: String = ""
     @SceneStorage("address") var address: String = ""
-    @SceneStorage("type") var type: String = "Volunteer"
+    @SceneStorage("type") var type: String = ""
     @EnvironmentObject var user: UserList
     @State private var isShowingDetailView = false
+    @Environment(\.presentationMode) var presentationMode // Used to go back to the previous view
+    @State var signUpSuccess: String = ""
 
     var body: some View {
         VStack {
@@ -47,32 +49,19 @@ struct SignUpForm: View {
                 Text("Address: ")
                 TextField("", text: $address).modifier(TextFieldUnderLines())
             }
+
+            HStack {
+                Text("Volunteer/Recruiter: ")
+                TextField("", text: $type).modifier(TextFieldUnderLines())
+            }
+
         }.padding()
+
+
         Spacer()
         VStack(alignment: .center) {
-//            Text("Are you a Volunteer or Recruiter?")
-//
-//            HStack {
-//                Text("I'm a... ")
-//                NavigationLink(destination: VolunteerSignUpForm()) {
-//                    Text("🙋Volunteer").bold()
-//                }
-//                NavigationLink(destination: RecruiterSignUpForm()) {
-//                    Text("🤵Recruiter").bold()
-//                }
-//            }
-            //user.addUsers(username, password, firstName, lastName, email, address, "Volunteer")
-            
-            
-//            NavigationLink(destination: LogInPage()) {
-//                Text("Complete Sign up").bold()
-//            }.modifier(ButtonDesign())
-            
-            
-            Button(action: {
-//                print("Successfully added a new user to your list!") // For debugging purposes, delete this line later
+            Button("Complete Sign Up") {
                 user.addUsers(username, password, firstName, lastName, email, address, type)
-                print("\(username) with password: \(password) has been added to the list.") // For debugging purposes, delete this line later
                 username = ""
                 password = ""
                 firstName = ""
@@ -80,88 +69,27 @@ struct SignUpForm: View {
                 email = ""
                 address = ""
                 type = ""
-                print("Executed add statement.")    // For debugging purposes, delete this line later
-            })
-            {
-                Text("Add new user")
-            }
-            
+                signUpSuccess = "Successfully signed up!"
+                // This line makes the current view go back to the previous view, in this case we go back to LogInPage()
+                self.presentationMode.wrappedValue.dismiss()
+            }.modifier(ButtonDesign())
+
+            Text("\(signUpSuccess)").padding()
+
+            Spacer()
         }
-        Spacer()
     }
 }
 
-struct VolunteerSignUpForm: View {
-    @State var strengths = ""
-    @State var reasonToVolunteer = ""
-    @State var thingsAboutUser = ""
-  
+struct SignUpComplete: View {
     var body: some View {
-        Text("Volunteer Sign Up").font(.custom("Arial", size: 20))
-    
-        VStack(alignment: .center) {
-            Text("What are some of your strengths?")
-            TextField("Your response here", text: $strengths)
-                .modifier(TextFieldUnderLines())
-        }.padding()
-    
         VStack {
-            Text("Why did you want to volunteer?")
-            TextField("Your response here", text: $reasonToVolunteer)
-                .modifier(TextFieldUnderLines())
-        }.padding()
-    
-        VStack {
-            Text("Tell us some interesting things about yourself.")
-            TextField("Your response here", text: $thingsAboutUser)
-                .modifier(TextFieldUnderLines())
-        }.padding()
-    
-        HStack {
+            Text("Your all set!")
+
             NavigationLink(destination: LogInPage()) {
-                Text("Complete Sign up").bold()
+                Text("Login in here")
             }
         }
-    
-        Spacer()
     }
 }
 
-struct RecruiterSignUpForm: View {
-    @State var organizationType = ""
-    @State var reasonForVolunteers = ""
-    @State var thingsToKnowAboutCompany = ""
-  
-    var body: some View {
-        VStack {
-            Text("Recruiters Sign Up").font(.custom("Arial", size: 20))
-        }.padding()
-        VStack {
-            Text("Your organization type?")
-            TextField("Your response here", text: $organizationType)
-                .modifier(TextFieldUnderLines())
-        }.padding()
-        VStack {
-            Text("Why do you need volunteers?")
-            TextField("Your response here", text: $reasonForVolunteers)
-                .modifier(TextFieldUnderLines())
-        }.padding()
-        VStack {
-            Text("Things you want volunteers to know about your company")
-            TextField("Your response here", text: $thingsToKnowAboutCompany)
-                .modifier(TextFieldUnderLines())
-        }.padding()
-        HStack {
-            NavigationLink(destination: LogInPage()) {
-                Text("Complete Sign up").bold()
-            }
-        }
-        Spacer()
-    }
-}
-
-struct CompleteSignUpPage: View {
-    var body: some View {
-        Text("Congratulations! Your sign up is complete!")
-    }
-}
