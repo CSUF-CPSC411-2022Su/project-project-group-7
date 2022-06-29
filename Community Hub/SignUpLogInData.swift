@@ -7,10 +7,17 @@
 
 import Foundation
 
-class UserList: ObservableObject {
+class UserList: ObservableObject , Identifiable {
     @Published var userList: [SignUpInformation] = []
-
+    @Published var currentUser : SignUpInformation
     init() {
+        currentUser = SignUpInformation(username: "tuffytitan",
+                                       password: "123456abc",
+                                       firstName: "Alan",
+                                       lastName: "Guan",
+                                       email: "tuffytitan@csu.fullerton.edu",
+                                       address: "123 N Fullerton Rd",
+                                       type: "Volunteer")
         userList.append(SignUpInformation(username: "tuffytitan",
                                           password: "123456abc",
                                           firstName: "Alan",
@@ -18,15 +25,16 @@ class UserList: ObservableObject {
                                           email: "tuffytitan@csu.fullerton.edu",
                                           address: "123 N Fullerton Rd",
                                           type: "Volunteer"))
-        userList.append(SignUpInformation(username: "x12345",
-                                          password: "abcd",
+        userList.append(SignUpInformation(username: "123",
+                                          password: "123",
                                           firstName: "Alan",
                                           lastName: "Guan",
                                           email: "tuffytitan@csu.fullerton.edu",
                                           address: "123 N Fullerton Rd",
                                           type: "Volunteer"))
+        
     }
-
+    
     func addUsers(_ newUsername: String,
                   _ newPassword: String,
                   _ newFirstName: String,
@@ -55,6 +63,7 @@ class UserList: ObservableObject {
         // or has entered an incorrect username or password.
         for user in userList {
             if user.username == inputUsername, user.password == inputPassword {
+               currentUser = user
                 return true
             }
         }

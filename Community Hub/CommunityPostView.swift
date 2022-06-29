@@ -64,6 +64,7 @@ struct CommunityPostView: View {
                 }
                 .padding(.bottom, 20)
                 HStack {
+                    
                     Text("Body")
                         .bold()
                     Spacer()

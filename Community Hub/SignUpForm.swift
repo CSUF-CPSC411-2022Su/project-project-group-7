@@ -20,7 +20,6 @@ struct SignUpForm: View {
     @State private var isShowingDetailView = false
 
     var body: some View {
-//        NavigationView {
         VStack {
             Text("Sign Up Page")
             Text("Please fill in the following information").padding()
@@ -48,17 +47,8 @@ struct SignUpForm: View {
                 Text("Address: ")
                 TextField("", text: $address).modifier(TextFieldUnderLines())
             }
-//                HStack {
-//                    Spacer()
-//                    NavigationLink(destination: ProfileView()) {
-//                        Text("Sign Up").bold().padding() // Log in button directs user to their home page
-//                    }
-//                }
         }.padding()
-//        }.padding().navigationBarHidden(true)
-    
         Spacer()
-
         VStack(alignment: .center) {
 //            Text("Are you a Volunteer or Recruiter?")
 //
